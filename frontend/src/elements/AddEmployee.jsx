@@ -16,7 +16,7 @@ const AddEmployee=(props) => {
   
  function submitform(){
   if(props.method==='put'){
-    axiosInstance.put("http://localhost:4000/emps/edit/"+props.data._id,form)
+    axiosInstance.put("/emps/edit/"+props.data._id,form)
     .then((res)=>{
 
       if(res.data==="Updation failed"){
@@ -29,7 +29,7 @@ const AddEmployee=(props) => {
       }
     })}
     else{
-      axiosInstance.post('http://localhost:4000/emps/add',form).then((res)=>{
+      axiosInstance.post('/emps/add',form).then((res)=>{
         alert(res.data);
       })
       .catch((

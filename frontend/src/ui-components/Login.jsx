@@ -13,7 +13,7 @@ const Login = () => {
     password:''
   })
 const addHandler =()=>{
-      axiosInstance.post('http://localhost:4000/user/login',user).then((res)=>{
+      axiosInstance.post('/user/login',user).then((res)=>{
         alert(res.data.message);
         if(res.data.token){
           sessionStorage.setItem('userToken',res.data.token);

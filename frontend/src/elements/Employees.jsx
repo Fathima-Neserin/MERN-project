@@ -17,7 +17,7 @@ const Employees = () => {
   let finalJSX;
 
   useEffect(()=>{
-    axiosInstance.get('http://localhost:4000/emps').then((res)=>{
+    axiosInstance.get('/emps').then((res)=>{
    
      setEmployee(...employee,res.data);
     
@@ -32,7 +32,7 @@ const Employees = () => {
 
     
     function removeEmployee(id) {
-      axiosInstance.delete('http://localhost:4000/emps/remove/'+id)
+      axiosInstance.delete('/emps/remove/'+id)
         .then((res) => {
           alert(res.data.message);
           // Update the state to remove the deleted employee
